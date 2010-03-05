@@ -8,7 +8,7 @@
 const char * CMD = "cmd.exe";
 
 /**
- * Attach socket to a proccess.
+ * Attach socket to a process.
  *
  * @arg winsock: wsa socket fd
  *
