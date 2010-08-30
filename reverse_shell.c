@@ -20,6 +20,7 @@ static RS_ERROR attachProcess(SOCKET winsock) {
     PROCESS_INFORMATION info_proc;
 
     memset(&start_proc, 0, sizeof start_proc);
+    memset(&info_proc, 0, sizeof info_proc);
 
     start_proc.cb = sizeof start_proc;
     start_proc.dwFlags = STARTF_USESTDHANDLES + STARTF_USESHOWWINDOW;

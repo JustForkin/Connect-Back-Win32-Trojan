@@ -1,7 +1,7 @@
 #ifndef _ERROR_H
 #define	_ERROR_H
 
-#define ERROR_MSG(msg, format...) fprintf(stderr,"(%s:%i)" (msg) "\n", \
+#define ERROR_MSG(msg, format...) fprintf(stderr,"(%s:%i)" msg "\n", \
     __FILE__, __LINE__, ##format)
 
 typedef enum {
